@@ -50,12 +50,13 @@ pipeline {
 	    stage('Deploy App on k8s') {
       steps {
             sshagent(['k8s']) {
-            sh "scp -o StrictHostKeyChecking=no deploymentservice.yaml ubuntu@172-31-37-64:/home/ubuntu"
+            sh "scp -o StrictHostKeyChecking=no deploymentservice.yaml ubuntu@172.31.37.64:/home/ubuntu
+"
             script {
                 try{
-                    sh "ssh ubuntu@172-31-37-64 kubectl apply -f ."
+                    sh "ssh ubuntu@172.31.37.64 kubectl apply -f ."
                 }catch(error){
-                    sh "ssh ubuntu@172-31-37-64 kubectl create -f ."
+                    sh "ssh ubuntu@172.31.37.64 kubectl create -f ."
             }
 }
         }
