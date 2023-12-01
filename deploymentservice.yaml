@@ -16,6 +16,8 @@ spec:
         - name: my-ecr-repo
           image: 241916522557.dkr.ecr.ap-south-1.amazonaws.com/my-ecr-repo:latest # Image that will be used to containers in the cluster
           imagePullPolicy: Always
+      imagePullSecrets:
+        - name: my-ecr-repo-secret
           ports:
             - containerPort: 8080 # The port that the container is running on in the cluster
 
