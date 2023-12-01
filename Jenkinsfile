@@ -31,14 +31,14 @@ pipeline {
         }
       }
 	 }
-	stage('Docker Run') {
-          steps{
-              script {
-                   sh 'docker run -d -p 8080:8080 241916522557.dkr.ecr.ap-
-                    south-1.amazonaws.com/my-ecr-repo:latest'
-                }
-          }
-      }
+	//stage('Docker Run') {
+          //steps{
+              //script {
+                  // sh 'docker run -d -p 8080:8080 241916522557.dkr.ecr.ap-
+                   // south-1.amazonaws.com/my-ecr-repo:latest'
+               // }
+         // }
+     // }
                  
     stage('Deploy to k8s'){
             steps{
