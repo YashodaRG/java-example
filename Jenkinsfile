@@ -32,10 +32,10 @@ pipeline {
       }
 	 }
                  
-    stage('Docker Run') {
-     steps{
-         script {
-                sh 'docker run -d -p 8085:8080 241916522557.dkr.ecr.ap-south-1.amazonaws.com/my-ecr-repo:latest'
+    stage('Deploy to k8s'){
+            steps{
+                script{
+                    kubernetesDeploy (configs: 'deploymentservice.yaml',kubeconfigId: 'k8sconfpwd')
             }
       }
     }
