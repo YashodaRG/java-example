@@ -12,8 +12,6 @@ spec:
       labels:
         app: my-ecr-repo
     spec:
-     imagePullSecrets:
-        - name: my-ecr-repo-secret
       containers:
         - name: my-ecr-repo
           image: 241916522557.dkr.ecr.ap-south-1.amazonaws.com/my-ecr-repo:latest # Image that will be used to containers in the cluster
